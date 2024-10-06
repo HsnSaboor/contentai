@@ -51,6 +51,3 @@ async def get_video_statistics(video_ids, channel_username):
                     'comments': comments,
                     'duration': '00:00:00',
                     'publishedAt': datetime.now().strftime('%Y-%m-%d')
-                })
-    logger.info(f"Fetched statistics for {len(stats)} videos")
-    return pd.DataFrame(stats)
