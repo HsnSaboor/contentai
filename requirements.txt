@@ -1,0 +1,11 @@
+flask 
+flask-restful 
+aiohttp 
+beautifulsoup4 
+pandas 
+textstat 
+nltk 
+scikit-learn 
+streamlit 
+requests 
+matplotlib
