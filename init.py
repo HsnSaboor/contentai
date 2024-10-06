@@ -1,10 +1,21 @@
 import os
 import sqlite3
 import logging
+import aiohttp
+import nltk
+
+# Download the stopwords corpus if it's not already downloaded
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
 
 # Initialize logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Define your API key
+GROQ_API_KEY = os.getenv('GROQ_API_KEY')  # Assuming you store your API key in an environment variable
 
 # Initialize database schema
 conn = sqlite3.connect('content_strategy.db', check_same_thread=False)
@@ -34,3 +45,7 @@ CREATE TABLE IF NOT EXISTS videos (
 conn.commit()
 
 logger.info("Database schema initialized successfully.")
+
+# Factory function to create a ClientSession
+async def create_client_session():
+    return aiohttp.ClientSession()
