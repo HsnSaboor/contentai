@@ -1,10 +1,17 @@
 import subprocess
 from api import app
+import logging
+
+# Initialize logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 def run_flask_api():
+    logger.info("Starting Flask API")
     app.run(debug=True)
 
 def run_streamlit_app():
+    logger.info("Starting Streamlit App")
     subprocess.run(["streamlit", "run", "streamlit_app.py"])
 
 if __name__ == "__main__":
