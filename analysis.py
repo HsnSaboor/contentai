@@ -1,7 +1,6 @@
 import asyncio
 import aiohttp
 import pandas as pd
-import youtube_transcript_api
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -9,7 +8,7 @@ import logging
 from bs4 import BeautifulSoup
 from init import GROQ_API_KEY, cursor
 from data_retrieval import get_channel_videos, get_video_statistics
-from youtube_transcript_api import YouTubeTranscriptApi  # Correct import statement
+from youtube_transcript_api import YouTubeTranscriptApi
 
 logger = logging.getLogger(__name__)
 stop_words = set(stopwords.words('english'))
