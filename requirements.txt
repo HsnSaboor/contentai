@@ -1,0 +1,9 @@
+robyn
+playwright
+playwright-stealth
+pandas
+nltk
+scikit-learn
+openai
+youtube-transcript-api
+streamlit
